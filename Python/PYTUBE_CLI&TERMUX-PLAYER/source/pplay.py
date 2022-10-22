@@ -1,16 +1,16 @@
 import os, subprocess
-import sys
+import sys, re
 
 def getlists():
     if getlastm():
         os.system('termux-media-player stop')
     print("Scan a mp3 music in this path")
-    os.system("find -L ~/PYTUBE_CLI/download/audio -type f -ipath '*.mp3' >source/lists/mp3.list")
+    os.system("find -L /sdcard -type f -ipath '*.mp3' >source/lists/mp3.list")
     print("scan in source download compeleto")
-    #pil = input("scan sdcard? y/n ").lower()
-    #if pil.strip() == 'y':
-        #os.system("find -L /sdcard/YMusic -type f -ipath '*.mp3' >>source/lists/mp3.list")
-        #print("scan compeleto")
+    pil = input("scan sdcard? y/n ").lower()
+    if pil.strip() == 'y':
+        os.system("find -L /storage/sdcard1 -type f -ipath '*.mp3' >>source/lists/mp3.list")
+        print("scan compeleto")
     input("Please enter to continued...")
     runn()
     playy()
@@ -31,9 +31,12 @@ def runn():
     aa = a.split("\n"); aa.remove('')
     f.close()
     judl = []
-    for x,n in enumerate(aa,start=1):
-        jd = n.split("/")
-        judl.append(f"{x}. {jd[9]}")
+    for i in aa:
+        jd = i.split("/")
+        for x in jd:
+            if (re.search(r"(.mp3)")):
+                judl.append(x)
+            
     return judl
     
 def playy():
