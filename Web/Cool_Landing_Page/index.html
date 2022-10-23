@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P2</title>
+    <!-- fonts  and icon -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- css  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="overlay first"></div>
+      <div class="overlay second"></div>
+      <div class="overlay third"></div>
+
+      <nav class="navbar">
+        <div class="menu">
+          <i class="material-icons">menu</i>
+        </div>
+        <div class="lang">eng</div>
+        <div class="serach">
+          <i class="material-icons">search</i>
+        </div>
+      </nav>
+      <!-- social media link  -->
+      <div class="media">
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+      <div class="text">
+        <h1>
+          <span class="hidetext"> FLy2you</span>
+        </h1>
+        <h2>LOVE</h2>
+        <h3>
+          <span class="hidetext">
+            Let's get lost <br />
+            tonight</span
+          >
+        </h3>
+        <p>
+          <span class="hidetext">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+            eius expedita! Porro qui veritatis vitae saepe laboriosam facilis
+            nostrum distinctio voluptate perspiciatis, maxime odio ratione
+            voluptatibus nisi? Quia, distinctio quae.
+          </span>
+        </p>
+      </div>
+      <div class="sponsor">
+        <img src="./images/sponsor-logo.png" alt="sponsor" />
+        <p>Official Sponsor</p>
+      </div>
+
+      <!-- Distortion   -->
+      <div class="distortion"></div>
+    </section>
+
+    <!-- gsap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <!-- three js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+      integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY="
+      crossorigin="anonymous"
+    ></script>
+    <!-- hover-effect js -->
+    <script src="./hover-effect.umd.js"></script>
+    <script>
+      new hoverEffect({
+        parent: document.querySelector(".distortion"),
+        intensity: 0.2,
+        image1: "./images/01.png",
+        image2: "./images/02.png",
+        displacementImage: "./images/diss.png",
+        imagesRatio: 380 / 300,
+      });
+
+      // NAVBAR
+      TweenMax.staggerFrom(
+        ".navbar div",
+        1.5,
+        {
+          delay: 1.5,
+          opacity: 0,
+          y: "20",
+          ease: Expo.easeInOut,
+        },
+        0.08
+      );
+
+      // MEDIA
+      TweenMax.staggerFrom(
+        ".media ul li",
+        1.5,
+        {
+          delay: 1.5,
+          opacity: 0,
+          x: "-20",
+          ease: Expo.easeInOut,
+        },
+        0.08
+      );
+
+      // TEXT
+      TweenMax.from(".text h1 .hidetext", 1.5, {
+        delay: 1,
+        y: "100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".text h3 .hidetext", 1.5, {
+        delay: 1.2,
+        y: "100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".text p .hidetext", 1.5, {
+        delay: 1.3,
+        y: "100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".text h2", 1.5, {
+        delay: 1.5,
+        opacity: 0,
+        x: "-10000",
+        ease: Expo.easeInOut,
+      });
+
+      // SPONSOR
+      TweenMax.from(".sponsor img", 1.5, {
+        delay: 1.5,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".sponsor p", 1.5, {
+        delay: 1.6,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut,
+      });
+
+      // DISTORTION
+      TweenMax.from(".distortion", 1.5, {
+        delay: 2,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut,
+      });
+
+      // OVERLAY
+      TweenMax.to(".first", 1.5, {
+        delay: 0.5,
+        top: "-100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.to(".second", 1.5, {
+        delay: 0.7,
+        top: "-100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.to(".third", 1.5, {
+        delay: 0.9,
+        top: "-100%",
+        ease: Expo.easeInOut,
+      });
+    </script>
+  </body>
+</html>
