@@ -9,7 +9,7 @@ def dlaud(url):
     nam = "{}.mp3".format(yu.title)
     for i in karak:
         nam = nam.replace(i, "")
-    aul.download(output_path="download/audio",filename=nam)
+    aul.download(output_path="/sdcard/Download/audio",filename=nam)
     print("Berhasil Download, file saved in download/audio")
     played()
     """rr = get(ul, stream=True); print(rr)
@@ -42,7 +42,7 @@ def dlvid(url):
     nam = "{}.mp4".format(yu.title)
     for i in karak:
         nam = nam.replace(i,"")
-    hr.download(output_path="download/video", filename=nam)
+    hr.download(output_path="/sdcard/Download/video", filename=nam)
     print("Berhasil Download, File saved in download/video")
     os.system("xdg-open {}".format("download/video"+nam))
     """rr = get(hrz, stream=True); print(rr)
