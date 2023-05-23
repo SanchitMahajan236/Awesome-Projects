@@ -19,7 +19,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "https-proxy-agent": "^5.0.1",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^3.3.0",
     "node-tesseract-ocr": "^2.2.1",
     "puppeteer": "^17.1.0",
     "puppeteer-extra": "^3.3.6",
