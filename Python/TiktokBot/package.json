@@ -21,7 +21,7 @@
     "https-proxy-agent": "^5.0.1",
     "node-fetch": "^3.3.0",
     "node-tesseract-ocr": "^2.2.1",
-    "puppeteer": "^17.1.0",
+    "puppeteer": "^22.6.4",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.1",
     "qs": "^6.11.1",
